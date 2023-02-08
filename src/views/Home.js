@@ -6,7 +6,7 @@ export default class Home extends Component {
         super();
         this.state = {
             name: 'Shoha',
-            age: 9000
+            
         }
         
         
@@ -20,12 +20,9 @@ export default class Home extends Component {
     }
 
     
-    happyBirthday=()=> {
-        console.log('button was clicked')
-        //this.state.age += 1 // this way is incorrect
-        // instead use setter method
-        this.setState({age: this.state.age + 1})
-    }
+
+    
+    
 
 
     render = () => {
@@ -36,8 +33,8 @@ export default class Home extends Component {
 
                 <h1>This is the home page</h1>
                 <h2>This is the home page of {this.state.name}</h2>
-                <p>{this.state.age}</p>
-                <button onClick={this.happyBirthday}>+</button>
+                <p>{this.props.age}</p>
+                <button onClick={this.props.happyBirthday}>+</button>
 
 
                 <p>{this.props.testVar}</p>
