@@ -8,7 +8,7 @@ export default class Post extends Component {
                 <div className="card-body">
                     <h5 className="card-title">{ this.props.postInfo.title } - { this.props.postInfo.author }</h5>
                     <p className="card-text">{this.props.postInfo.caption}</p>
-                    <a href="#" className="btn btn-primary">Go somewhere</a>
+                    
                 </div>
             </div>
         )

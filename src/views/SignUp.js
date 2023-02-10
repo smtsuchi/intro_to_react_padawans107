@@ -1,6 +1,8 @@
-import React from 'react'
+import React, { useState } from 'react';
+import { Navigate } from 'react-router-dom';
 
 export default function SignUp() {
+    const [redirect, setRedirect] = useState(false);
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -30,13 +32,18 @@ export default function SignUp() {
         const res = await fetch(url, options);
         const data = await res.json();
         console.log(data)
+        if (data.status==='ok'){
+            setRedirect(true)
+        }
 
     };
 
 
 
 
-    return (
+    return redirect?<Navigate to='/login' />:
+    
+    (
         <div>
             <h1>Sign Up</h1>
             <form onSubmit={handleSubmit}>

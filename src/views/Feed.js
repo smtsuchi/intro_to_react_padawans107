@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom';
 import Post from '../components/Post';
 
 export default class Feed extends Component {
@@ -12,7 +13,7 @@ export default class Feed extends Component {
 
 
   showPosts = () => {
-    return this.state.posts.map(p => <Post key={p.id} postInfo={p}/>)
+    return this.state.posts.map(p =><Link key={p.id} to={`/posts/${p.id}`} ><Post  postInfo={p}/></Link>)
   };
 
   getPosts = async () => {

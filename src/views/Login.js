@@ -1,6 +1,11 @@
-import React from 'react'
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
+
 
 export default function Login({logMeIn}) {
+    const navigate = useNavigate()
+
+
     const handleSubmit = async (e) => {
         e.preventDefault();
         const username = e.target.username.value;
@@ -20,7 +25,8 @@ export default function Login({logMeIn}) {
         const data = await res.json();
         console.log(data)
         if (data.status == 'ok') {
-            logMeIn(data.user)            
+            logMeIn(data.user) 
+            navigate('/')        
         }
 
     };

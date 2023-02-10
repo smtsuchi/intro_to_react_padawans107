@@ -1,11 +1,23 @@
 import React, { Component, useState } from 'react'
+import { Navigate } from 'react-router-dom';
 import CheckboxList from '../components/CheckBoxList'
 
 export default class ToDo extends Component {
+    constructor(){
+        super();
+        this.state = {
+            redirect:false
+        }
+    }
+
     
     
 
     render() {
+        if (this.state.redirect === true) {
+            return <Navigate to='/somewhere' />
+        }
+
         return (
             <div>
                 <form onSubmit={this.props.handleToDoSubmit}>

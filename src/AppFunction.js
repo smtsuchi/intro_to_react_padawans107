@@ -8,6 +8,10 @@ import ToDo from './views/ToDo';
 import Test from './components/Test';
 import SignUp from './views/SignUp';
 import Login from './views/Login';
+import SinglePost from './views/SinglePost';
+import CreatePost from './views/CreatePost';
+import UpdatePost from './views/UpdatePost';
+import UpdatePostClass from './views/UpdatePostClass';
 
 
 export default function App() {
@@ -57,6 +61,10 @@ export default function App() {
                     <Route path='/login' element={<Login logMeIn={logMeIn}/>} />
                     <Route path='/todo' element={<ToDo myList={myList} handleToDoSubmit={addToDo} deleteToDo={deleteToDo} />} />
                     <Route path='/test' element={<Test parentAge={age} happyBirthday={happyBirthday} />} />
+
+                    <Route path='/posts/:postId' element={<SinglePost user={user}/>} />
+                    <Route path='/posts/update/:postId' element={<UpdatePostClass user={user}/>} />
+                    <Route path='/posts/create' element={<CreatePost user={user}/>} />
                 </Routes>
 
             </div>

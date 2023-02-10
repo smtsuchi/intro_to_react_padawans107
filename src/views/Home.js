@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import Modal from '../components/Modal';
 
 export default class Home extends Component {
     constructor(){
@@ -39,6 +40,8 @@ export default class Home extends Component {
 
                 <p>{this.props.testVar}</p>
                 <p>{this.props.x}</p>
+
+                
 
             </div>
         )
