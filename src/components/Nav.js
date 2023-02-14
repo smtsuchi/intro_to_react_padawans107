@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { AiOutlinePlus } from 'react-icons/ai';
-// import { BsCloudPlus } from 'react-icons/bs'
+import { BsFillCartFill } from 'react-icons/bs'
 
 export default class Nav extends Component {
     
@@ -20,6 +20,7 @@ export default class Nav extends Component {
                             <Link className="nav-link" to="/feed">Instagram</Link>
                             <Link className="nav-link" to="/todo">To Do List</Link>
                             <Link className="nav-link" to="/test">Functional Component Test</Link>
+                            <Link className="nav-link" to="/shop">Shop</Link>
                             <Link className="nav-link" to="/posts/create"><AiOutlinePlus /></Link>
 
                             {
@@ -38,8 +39,13 @@ export default class Nav extends Component {
                             <Link className="nav-link" to="/login">Log In</Link>
                             
                             </>
+
+        
                             }
-                            
+                            <Link className="nav-link" to="/cart">
+                                <BsFillCartFill />
+                                {this.props.cart.length}|{this.props.cartTotal()}
+                                </Link>
                         </div>
                     </div>
                 </div>

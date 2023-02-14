@@ -6,6 +6,7 @@ import { Routes, Route, BrowserRouter as Router } from 'react-router-dom';
 import Feed from './views/Feed';
 import ToDo from './views/ToDo';
 import Test from './components/Test';
+import Shop from './views/Shop';
 
 
 export default class App extends Component {
